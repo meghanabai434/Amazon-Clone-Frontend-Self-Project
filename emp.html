@@ -1,0 +1,73 @@
+
+/* sidebar */
+body{
+   transition: filter 0.3s ease;
+}
+
+.blurr{
+   filter: blur(5px);
+}
+.sidebarr{
+   position: fixed;
+   top: 0;
+   left:-250px;
+   width:250px;
+   height: auto;
+   background-color: #333;
+   color:white;
+   padding-top:20px;
+   transition: left 0.3s ease;
+   z-index: 0;
+}
+.sidebarr a{
+   display:block;
+   padding: 15px;
+   color: white;
+   transition: background 0.3s;
+}
+.sidebarr a:hover{
+   background-color: #575757;
+}
+.close_btnn{
+   position:absolute;
+   top: 10px;
+   right: 20px;
+   font-size: 24px;
+   cursor: pointer;
+}
+.overlay{
+   position:fixed;
+   top: 0;
+   left:0;
+   width: 100%;
+   height: 100%;
+   background-color: rgba(0,0,0,0.5);
+   visibility:hidden;
+   opacity: 0;
+   transition:visibility 0s,opacity 0.3s;
+}
+.sidebarr.open{
+   left: 0;
+}
+.overlay.show{
+   visibility: visible;
+   opacity:1;
+}
+
+/* finishedd sidebar */
+
+
+
+
+function openSidebar(){
+    document.getElementById("sidebarr").classList.add("open");
+    document.getElementById("overlay").classList.add("show");
+    document.getElementById("blur").classList.add("blurr");
+
+}
+
+function closeSidebar(){
+    document.getElementById("sidebarr").classList.remove("open");
+    document.getElementById("overlay").classList.remove("show");
+    document.getElementById("blur").classList.remove("blurr");
+    
